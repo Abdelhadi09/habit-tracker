@@ -1,0 +1,127 @@
+:root {
+        --primary-color: #53d22c;
+        --secondary-color: #121a0f;
+        --accent-color: #ebf2e9;
+        --background-color: #f9fbf9;
+        --text-primary: #121a0f;
+        --text-secondary: #639155;
+        --border-color: #d6e5d2;
+      }
+      body {
+        font-family: 'Manrope', sans-serif;
+      }
+      .icon-sm {
+        font-size: 20px;
+        line-height: 1;
+      }
+      .icon-md {
+        font-size: 24px;
+        line-height: 1;
+      }
+      .nav-link.active {
+        color: var(--primary-color);
+        font-weight: 700;
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 4px;
+      }
+      .progress-bar-fill {
+        transition: width 0.5s ease-in-out;
+      }
+      .table-cell-status-true {
+        color: var(--primary-color);
+        font-weight: 700;
+      }
+      .table-cell-status-false {
+        color: #d9534f;}
+      .section-card {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        padding: 24px;
+        margin-bottom: 24px;
+      }
+      .form-select {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+        background-position: right 0.5rem center;
+        background-repeat: no-repeat;
+        background-size: 1.5em 1.5em;
+        padding-right: 2.5rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --primary-color: #53d22c;
+          --secondary-color: #f9fbf9;
+          --accent-color: #232b1a;
+          --background-color: #181f13;
+          --text-primary: #f9fbf9;
+          --text-secondary: #a6e3a1;
+          --border-color: #2d3a23;
+        }
+        body {
+          background-color: var(--background-color);
+          color: var(--text-primary);
+        }
+        .section-card {
+          background-color: #232b1a;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+          border-color: var(--border-color);
+        }
+        .form-select, .form-input {
+          background-color: #232b1a;
+          color: var(--text-primary);
+          border-color: var(--border-color);
+        }
+        .progress-bar-fill {
+          background-color: var(--primary-color);
+        }
+        table, th, td {
+          background-color: #232b1a !important;
+          color: var(--text-primary) !important;
+          border-color: var(--border-color) !important;
+        }
+        thead {
+          background-color: #181f13 !important;
+        }
+        .goalBarContainer, .w-32 {
+          background-color: #2d3a23 !important;
+        }
+        .goalBar, .progress-bar-fill {
+          background-color: var(--primary-color) !important;
+          color: #232b1a !important;
+        }
+        .table-cell-status-true {
+          color: var(--primary-color) !important;
+        }
+        .table-cell-status-false {
+          color: #d9534f !important;
+        }
+        #goalList > div {
+          background-color: #232b1a !important;
+          border-color: var(--border-color) !important;
+          color: var(--text-primary) !important;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        #goalList p, #goalList span {
+          color: var(--text-primary) !important;
+        }
+        #goalList .progress-bar-fill, #goalList .goalBar {
+          background-color: var(--primary-color) !important;
+          color: #232b1a !important;
+        }
+        #duration{
+          color: #222 !important;
+        }
+        #goalDuration {
+          color: #222 !important;
+        }
+        #goalHabit {
+          color: #222 !important;
+        }
+        #Habit{
+          color: #222 !important;
+        }
+      }

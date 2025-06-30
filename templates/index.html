@@ -134,10 +134,12 @@
 </section>
 <section class="section-card" id="charts">
 <h2 class="text-[var(--text-primary)] text-xl font-semibold leading-tight tracking-tight mb-4">Charts</h2>
-<div class="w-full aspect-[16/9] rounded-lg overflow-hidden border border-[var(--border-color)]">
-<img id="trendChart" alt="Habit progress chart" class="w-full h-full object-cover" src="/trend.png" />
+<div class="w-full aspect-[16/9] rounded-lg overflow-hidden border border-[var(--border-color)] flex items-center justify-center bg-[var(--background-color)]">
+<canvas id="trendChart" class="w-full h-full"></canvas>
 </div>
 </section>
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </div>
 </main>
 <footer class="text-center py-6 border-t border-[var(--border-color)]">

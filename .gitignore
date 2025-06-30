@@ -1,0 +1,16 @@
+
+# Credentials
+github acsses key ghp.txt
+github-ssh.txt.pub
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+
+# Other
+.DS_Store

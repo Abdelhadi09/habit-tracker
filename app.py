@@ -131,6 +131,35 @@ def trend_chart():
         print("Plot error:", e)
         return jsonify({"error": str(e)}), 500
 
+@app.route("/trend-data")
+def trend_data():
+    try:
+        df = pd.read_csv(DATA_FILE)
+        if df.empty:
+            return jsonify({"labels": [], "datasets": []})
+        df["date"] = pd.to_datetime(df["date"])
+        today = datetime.today()
+        week_ago = today - timedelta(days=6)
+        weekly = df[df["date"] >= week_ago]
+        # Get all dates in the last 7 days
+        date_labels = [(today - timedelta(days=i)).date() for i in range(6, -1, -1)]
+        date_labels_str = [d.strftime('%a') for d in date_labels]
+        habits = weekly["habit"].unique()
+        datasets = []
+        for habit in habits:
+            data = []
+            for d in date_labels:
+                mask = (weekly["habit"] == habit) & (weekly["date"].dt.date == d)
+                data.append(int(weekly.loc[mask, "duration"].sum()) if not weekly.loc[mask].empty else 0)
+            datasets.append({
+                "label": habit,
+                "data": data
+            })
+        return jsonify({"labels": date_labels_str, "datasets": datasets})
+    except Exception as e:
+        print("Error generating trend data:", e)
+        return jsonify({"labels": [], "datasets": [], "error": str(e)})
+
 
 if __name__ == "__main__":
     app.run(debug=True)
